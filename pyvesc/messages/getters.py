@@ -1,5 +1,16 @@
 from pyvesc.messages.base import VESCMessage
 
+class GetVersions(metaclass=VESCMessage):
+    """ Gets version fields
+    """
+    id = 0
+
+    fields = [
+            ('comm_fw_version', 'b'),
+            ('fw_version_major', 'b'),
+            ('fw_version_minor', 'b')
+    ]
+
 class GetValues(metaclass=VESCMessage):
     """ Gets internal sensor data
     """
