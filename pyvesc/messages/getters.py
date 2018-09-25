@@ -11,6 +11,10 @@ class GetVersions(metaclass=VESCMessage):
             ('fw_version_minor', 'b')
     ]
 
+    def __str__(self):
+            return "versons:{}.{}.{}".format(self.comm_fw_version, self.fw_version_major, self.fw_version_minor)
+
+
 class GetValues(metaclass=VESCMessage):
     """ Gets internal sensor data
     """
@@ -52,3 +56,6 @@ class GetRotorPosition(metaclass=VESCMessage):
     fields = [
             ('rotor_pos', 'i', 100000)
     ]
+
+    def __str__(self):
+            return "rotor_pos:{}".format(self.rotor_pos)
