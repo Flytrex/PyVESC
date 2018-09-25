@@ -24,9 +24,9 @@ class SetRPM(metaclass=VESCMessage):
 
 
 class SetCurrent(metaclass=VESCMessage):
-    """ Set the current (in milliamps) to the motor.
+    """ Set the current (in amps) to the motor.
 
-    :ivar current: Value to set the current to (in milliamps).
+    :ivar current: Value to set the current to (in amps).
     """
     id = 6
     fields = [
@@ -35,13 +35,13 @@ class SetCurrent(metaclass=VESCMessage):
 
 
 class SetCurrentBrake(metaclass=VESCMessage):
-    """ Set the current brake (in milliamps).
+    """ Set the current brake (in amps).
 
-    :ivar current_brake: Value to set the current brake to (in milliamps).
+    :ivar current_brake: Value to set the current brake to (in amps).
     """
     id = 7
     fields = [
-        ('current_brake', 'i')
+        ('current_brake', 'i', 1000.0)
     ]
 
 class SetPosition(metaclass=VESCMessage):
