@@ -105,3 +105,14 @@ class SetRotorPositionMode(metaclass=VESCMessage):
     fields = [
         ('pos_mode', 'b')
     ]
+
+
+class SetCurrentLimit(metaclass=VESCMessage):
+    """ Set the current (in amps) to the motor.
+
+    :ivar current: Value to set the current limit to (in amps).
+    """
+    id = 38
+    fields = [
+        ('current_limit', 'i', 1000.0)
+    ]
