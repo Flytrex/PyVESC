@@ -1,6 +1,15 @@
 from pyvesc.messages.base import VESCMessage
 
 
+class JumpToBootLoader(metaclass=VESCMessage):
+    """ COMM_JUMP_TO_BOOTLOADER
+    
+    """
+    id = 1
+    fields = [
+    ]
+
+
 class SetDutyCycle(metaclass=VESCMessage):
     """ Set the duty cycle.
 
