@@ -38,7 +38,7 @@ class SetDutyCycle(metaclass=VESCMessage):
     """
     id = 5
     fields = [
-        ('duty_cycle', 'i')
+        ('duty_cycle', 'i', 100000.0)
     ]
 
 
@@ -49,7 +49,7 @@ class SetRPM(metaclass=VESCMessage):
     """
     id = 8
     fields = [
-        ('rpm', 'i')
+        ('rpm', 'i', 1.0)
     ]
 
 

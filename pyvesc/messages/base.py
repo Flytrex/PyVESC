@@ -96,7 +96,7 @@ class VESCMessage(type):
         field_values = []
         if not instance._field_scalars:
             for field_name in instance._field_names:
-                field_values.append(getattr(instance, field_name))
+                field_values.append(int(getattr(instance, field_name)))
         else:
             for field_name, field_scalar in zip(instance._field_names, instance._field_scalars):
                 field_values.append(int(getattr(instance, field_name) * field_scalar))
