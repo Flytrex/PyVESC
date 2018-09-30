@@ -60,7 +60,7 @@ class SetCurrent(metaclass=VESCMessage):
     """
     id = 6
     fields = [
-        ('current', 'i')
+        ('current', 'i', 1000.0)
     ]
 
 
