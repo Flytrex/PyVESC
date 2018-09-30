@@ -9,6 +9,27 @@ class JumpToBootLoader(metaclass=VESCMessage):
     fields = [
     ]
 
+class TerminalCommand(metaclass=VESCMessage):
+    """ 
+    :ivar command: Terminal command to send
+    """
+    id = 20
+
+    fields = [
+        ('command', 's')
+    ]
+
+class PrintedMessage(metaclass=VESCMessage):
+    """ 
+    """
+    id = 21
+
+    fields = [
+        ('text', 's')
+    ]
+
+    def __str__(self):
+            return "message:{}".format(self.text)
 
 class SetDutyCycle(metaclass=VESCMessage):
     """ Set the duty cycle.
