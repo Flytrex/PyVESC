@@ -1,4 +1,6 @@
 from pyvesc.messages.base import VESCMessage
+# python format codes are documented here: https://docs.python.org/2/library/struct.html
+# protocol is doucmented here: http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/
 
 class GetVersions(metaclass=VESCMessage):
     """ Gets version fields
