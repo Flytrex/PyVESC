@@ -14,7 +14,7 @@ class GetVersions(metaclass=VESCMessage):
     ]
 
     def __str__(self):
-            return "versons:{}.{}.{}".format(self.comm_fw_version, self.fw_version_major, self.fw_version_minor)
+            return f"versons:{self.comm_fw_version}.{self.fw_version_major}.{self.fw_version_minor}"
 
 
 class GetValues(metaclass=VESCMessage):
@@ -44,7 +44,7 @@ class GetValues(metaclass=VESCMessage):
         ]
 
     def __str__(self):
-            return "values:  rpm {} curr_avg {} tacho {}".format(self.rpm, self.avg_motor_current, self.tachometer)
+            return f"values:  rpm {self.rpm} time {self.time_ms} tacho {self.tachometer}"
 
 
 class GetRotorPosition(metaclass=VESCMessage):
