@@ -40,7 +40,8 @@ class GetValues(metaclass=VESCMessage):
                 ('tachometer_abs', 'i', 1),
                 ('mc_fault_code', 'c'),
                 ('pid_pos_now', 'i', 1000000),
-                ('app_controller_id', 'c')
+                ('app_controller_id', 'c'),
+                ('time_ms', 'i', 1),
         ]
 
     def __str__(self):
