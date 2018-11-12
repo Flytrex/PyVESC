@@ -47,6 +47,24 @@ class GetValues(metaclass=VESCMessage):
     def __str__(self):
             return f"values:  rpm {self.rpm} time {self.time_ms} tacho {self.tachometer}"
 
+class GetTelem(metaclass=VESCMessage):
+    """ Gets internal sensor data
+    """
+    id = 40
+
+    fields = [
+                ('time_ms', 'i', 1),
+                ('rpm', 'i', 1),
+                ('tachometer', 'i', 1),
+                ('avg_motor_current', 'i', 100),
+                ('current_iterm', 'i', 100),
+                ('current_cmd', 'i', 100),
+                ('rpm_error', 'i', 1),
+                ('mc_fault_code', 'c')
+       ]
+
+    def __str__(self):
+            return f"values:  rpm {self.rpm} time {self.time_ms} tacho {self.tachometer}"
 
 class GetRotorPosition(metaclass=VESCMessage):
     """ Gets rotor position data
