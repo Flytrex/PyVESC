@@ -2,7 +2,7 @@ import pyvesc.messages.base
 import pyvesc.packet.codec
 
 
-def decode(buffer):
+def decode(buffer, errors='ignore'):
     """
     Decodes the next valid VESC message in a buffer.
 
@@ -13,7 +13,7 @@ def decode(buffer):
              was parsed returns (None, 0).
     :rtype: `tuple`: (PyVESC message, int)
     """
-    msg_payload, consumed = pyvesc.packet.codec.unframe(buffer)
+    msg_payload, consumed = pyvesc.packet.codec.unframe(buffer, errors)
     if msg_payload:
         return pyvesc.messages.base.VESCMessage.unpack(msg_payload), consumed
     else:
