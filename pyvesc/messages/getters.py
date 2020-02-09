@@ -60,7 +60,11 @@ class GetTelem(metaclass=VESCMessage):
                 ('current_iterm', 'i', 100),
                 ('current_cmd', 'i', 100),
                 ('rpm_error', 'i', 1),
-                ('mc_fault_code', 'c')
+                ('mc_fault_code', 'c'),
+                ('brake_status', 'c'),
+                ('encoder_errors', 'c'),
+                #('encoder_agc', 'c'),
+                #('encoder_spi_err_rate', 'c')
        ]
 
     def __str__(self):
